@@ -1,0 +1,277 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.1 条件概率与贝叶斯公式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Part I  mathematics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1 Probability theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1" data-path="chapter1_Bayes.html">
+            
+                <a href="chapter1_Bayes.html">
+            
+                    
+                    1.1 条件概率与贝叶斯公式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >1.1 条件概率与贝叶斯公式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="11-&#x6761;&#x4EF6;&#x6982;&#x7387;&#x4E0E;&#x8D1D;&#x53F6;&#x65AF;&#x516C;&#x5F0F;">1.1 &#x6761;&#x4EF6;&#x6982;&#x7387;&#x4E0E;&#x8D1D;&#x53F6;&#x65AF;&#x516C;&#x5F0F;</h1>
+<p><img src="imgs/bayes.png" alt="Alt text"></p>
+<p>&#x8D1D;&#x53F6;&#x65AF;(&#x7EA6;1701-1761) Thomas Bayes&#xFF0C;&#x82F1;&#x56FD;&#x6570;&#x5B66;&#x5BB6;&#x3002;&#x7EA6;1701&#x5E74;&#x51FA;&#x751F;&#x4E8E;&#x4F26;&#x6566;&#xFF0C;&#x505A;&#x8FC7;&#x795E;&#x752B;&#x3002;&#x7EA6;1701&#x5E74;&#x51FA;&#x751F;&#x4E8E;&#x4F26;&#x6566;&#xFF0C;&#x505A;&#x8FC7;&#x795E;&#x752B;&#x3002;1742&#x5E74;&#x6210;&#x4E3A;&#x82F1;&#x56FD;&#x7687;&#x5BB6;&#x5B66;&#x4F1A;&#x4F1A;&#x5458;&#x3002;1761&#x5E74;4&#x6708;7&#x65E5;&#x901D;&#x4E16;&#x3002;&#x8D1D;&#x53F6;&#x65AF;&#x5728;&#x6570;&#x5B66;&#x65B9;&#x9762;&#x4E3B;&#x8981;&#x7814;&#x7A76;&#x6982;&#x7387;&#x8BBA;&#x3002;&#x4ED6;&#x9996;&#x5148;&#x5C06;&#x5F52;&#x7EB3;&#x63A8;&#x7406;&#x6CD5;&#x7528;&#x4E8E;&#x6982;&#x7387;&#x8BBA;&#x57FA;&#x7840;&#x7406;&#x8BBA;&#xFF0C;&#x5E76;&#x521B;&#x7ACB;&#x4E86;&#x8D1D;&#x53F6;&#x65AF;&#x7EDF;&#x8BA1;&#x7406;&#x8BBA;&#xFF0C;&#x5BF9;&#x4E8E;&#x7EDF;&#x8BA1;&#x51B3;&#x7B56;&#x51FD;&#x6570;&#x3001;&#x7EDF;&#x8BA1;&#x63A8;&#x65AD;&#x3001;&#x7EDF;&#x8BA1;&#x7684;&#x4F30;&#x7B97;&#x7B49;&#x505A;&#x51FA;&#x4E86;&#x8D21;&#x732E;&#x3002;&#x4ED6;&#x6B7B;&#x540E;&#xFF0C;&#x7406;&#x67E5;&#x5FB7;&#xB7;&#x666E;&#x83B1;&#x65AF;(Richard Price)&#x4E8E;1763&#x5E74;&#x5C06;&#x4ED6;&#x7684;&#x8457;&#x4F5C;&#x300A;&#x673A;&#x4F1A;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x6CD5;&#x300B;(An essay towards solving a problem in the doctrine of chances)&#x5BC4;&#x7ED9;&#x4E86;&#x82F1;&#x56FD;&#x7687;&#x5BB6;&#x5B66;&#x4F1A;&#xFF0C;&#x5BF9;&#x4E8E;&#x73B0;&#x4EE3;&#x6982;&#x7387;&#x8BBA;&#x548C;&#x6570;&#x7406;&#x7EDF;&#x8BA1;&#x4EA7;&#x751F;&#x4E86;&#x91CD;&#x8981;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x8D1D;&#x53F6;&#x65AF;&#x7684;&#x53E6;&#x4E00;&#x8457;&#x4F5C;&#x300A;&#x673A;&#x4F1A;&#x7684;&#x5B66;&#x8BF4;&#x6982;&#x8BBA;&#x300B;&#x53D1;&#x8868;&#x4E8E;1758&#x5E74;&#x3002;&#x8D1D;&#x53F6;&#x65AF;&#x6240;&#x91C7;&#x7528;&#x7684;&#x8BB8;&#x591A;&#x672F;&#x8BED;&#x88AB;&#x6CBF;&#x7528;&#x81F3;&#x4ECA;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 1 Probability theory">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.1 条件概率与贝叶斯公式","level":"1.2.1.1","depth":3,"previous":{"title":"1 Probability theory","level":"1.2.1","depth":2,"path":"docs/part1/probability_throry/README.md","ref":"docs/part1/probability_throry/README.md","articles":[{"title":"1.1 条件概率与贝叶斯公式","level":"1.2.1.1","depth":3,"path":"docs/part1/probability_throry/chapter1_Bayes.md","ref":"docs/part1/probability_throry/chapter1_Bayes.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/part1/probability_throry/chapter1_Bayes.md","mtime":"2018-09-20T08:15:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-20T08:15:47.093Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
