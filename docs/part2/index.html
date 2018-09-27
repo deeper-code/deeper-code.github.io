@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Part I  mathematics · GitBook</title>
+        <title>Part II Deeper Tricks · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="probability_throry/" />
+    <link rel="next" href="super_convergence.html" />
     
     
     <link rel="prev" href="../../" />
@@ -107,7 +107,7 @@
                 <a href="./">
             
                     
-                    Part I  mathematics
+                    Part II Deeper Tricks
             
                 </a>
             
@@ -116,35 +116,16 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="probability_throry/">
+        <li class="chapter " data-level="1.2.1" data-path="super_convergence.html">
             
-                <a href="probability_throry/">
+                <a href="super_convergence.html">
             
                     
-                    1 Probability theory
+                    超收敛
             
                 </a>
             
 
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.1" data-path="probability_throry/chapter1_Bayes.html">
-            
-                <a href="probability_throry/chapter1_Bayes.html">
-            
-                    
-                    1.1 条件概率与贝叶斯公式
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -183,7 +164,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Part I  mathematics</a>
+        <a href="../.." >Part II Deeper Tricks</a>
     </h1>
 </div>
 
@@ -198,12 +179,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="part-i--mathematics">Part I  mathematics</h1>
-<p>&#x7EDF;&#x8BA1;&#x5B66;&#x3001;&#x6570;&#x503C;&#x5206;&#x6790;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x9886;&#x57DF;&#x7684;&#x57FA;&#x77F3;&#xFF0C;&#x76EE;&#x524D;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x6982;&#x7387;&#x7EDF;&#x8BA1;&#x7406;&#x8BBA;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8BF4;&#x6211;&#x4EEC;&#x642D;&#x5EFA;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x90FD;&#x7EDF;&#x79F0;&#x4E3A;<strong>&#x6982;&#x7387;&#x6A21;&#x578B;</strong>&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x6709;&#x8BF8;&#x591A;&#x5B66;&#x8005;&#x4E0D;&#x8BA4;&#x53EF;AI&#x7684;&#x539F;&#x56E0;&#xFF0C;AI&#x5927;&#x725B;LeeCun&#x66FE;&#x8BF4;&#xFF1A;&#x201C;&#x8865;&#x201D;&#xFF0C; &#x540E;&#x9762;&#x6211;&#x4EEC;&#x4F1A;&#x770B;&#x5230;&#x4E3A;&#x4EC0;&#x4E48;&#x6982;&#x7387;&#x6A21;&#x578B;&#x4F1A;&#x5B58;&#x5728;&#x8BF8;&#x591A;&#x95EE;&#x9898;&#x3002;&#x672C;&#x7AE0;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x9886;&#x57DF;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x6570;&#x5B66;&#x57FA;&#x7840;&#x548C;&#x6211;&#x5B66;&#x4E60;&#x8FC7;&#x7A0B;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x6709;&#x610F;&#x601D;&#x7684;&#x6570;&#x5B66;&#x5185;&#x5BB9;&#x3002;</p>
-<hr>
-<h2 id="version">Version</h2>
+                                <h1 id="part-ii-deeper-tricks">Part II Deeper Tricks</h1>
 <ul>
-<li><code>@2018.9.20</code>,<code>Add</code>,<code>&#x7EDF;&#x8BA1;&#x8BBA;/&#x6761;&#x4EF6;&#x6982;&#x7387;&#x548C;&#x8D1D;&#x53F6;&#x65AF;&#x516C;&#x5F0F;</code></li>
+<li><p>AdamW + &#x8D85;&#x6536;&#x655B;</p>
+<p>&#x76EE;&#x524D;&#x8BAD;&#x7EC3;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6700;&#x5FEB;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;AdamW&#x4F18;&#x5316;&#x7B97;&#x6CD5;+&#x8D85;&#x6536;&#x655B;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x5F53;&#x524D;&#x7ECF;&#x5178;&#x7684;&#x8BBA;&#x6587;&#x90FD;&#x662F;&#x7528;SGDM&#x6765;&#x8BAD;&#x7EC3;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5927;&#x5BB6;&#x90FD;&#x89C9;&#x5F97;SGD&#x6BD4;Adam&#x6536;&#x655B;&#x66F4;&#x597D;&#xFF1F;Adam&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x7684;&#x539F;&#x56E0;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
+</li>
 </ul>
 
                                 
@@ -237,7 +217,7 @@
                 </a>
                 
                 
-                <a href="probability_throry/" class="navigation navigation-next " aria-label="Next page: 1 Probability theory">
+                <a href="super_convergence.html" class="navigation navigation-next " aria-label="Next page: 超收敛">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -248,7 +228,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part I  mathematics","level":"1.2","depth":1,"next":{"title":"1 Probability theory","level":"1.2.1","depth":2,"path":"docs/part1/probability_throry/README.md","ref":"docs/part1/probability_throry/README.md","articles":[{"title":"1.1 条件概率与贝叶斯公式","level":"1.2.1.1","depth":3,"path":"docs/part1/probability_throry/chapter1_Bayes.md","ref":"docs/part1/probability_throry/chapter1_Bayes.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/part1/README.md","mtime":"2018-09-20T08:09:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-20T10:03:56.429Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part II Deeper Tricks","level":"1.2","depth":1,"next":{"title":"超收敛","level":"1.2.1","depth":2,"path":"docs/part2/super_convergence.md","ref":"docs/part2/super_convergence.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","livereload"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/part2/README.md","mtime":"2018-09-27T07:36:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-27T12:26:32.119Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -263,6 +243,10 @@
     
         
         <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
